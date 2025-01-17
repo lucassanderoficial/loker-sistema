@@ -1,0 +1,93 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Hide scrollbar but keep functionality */
+@layer utilities {
+  .scrollbar-hide {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+  }
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;  /* Chrome, Safari and Opera */
+  }
+
+  /* Mobile optimizations */
+  @media (max-width: 768px) {
+    .mobile-menu-open {
+      overflow: hidden;
+    }
+
+    .mobile-menu {
+      transform: translateX(-100%);
+      transition: transform 0.2s ease-in-out;
+    }
+
+    .mobile-menu.open {
+      transform: translateX(0);
+    }
+
+    .mobile-search {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      background: white;
+      padding: 1rem;
+      z-index: 40;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      display: none;
+    }
+
+    .mobile-search.open {
+      display: block;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .table-responsive {
+      display: block;
+      width: 100%;
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+      font-size: 0.875rem;
+    }
+
+    .table-responsive th,
+    .table-responsive td {
+      white-space: nowrap;
+      padding: 0.75rem 1rem;
+    }
+  }
+
+  /* Improve touch targets on mobile */
+  @media (max-width: 768px) {
+    button, 
+    [role="button"],
+    input,
+    select {
+      min-height: 44px;
+      min-width: 44px;
+    }
+
+    .mobile-full {
+      width: 100%;
+    }
+
+    .mobile-stack {
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .mobile-scroll {
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: none;
+      -ms-overflow-style: none;
+    }
+
+    .mobile-scroll::-webkit-scrollbar {
+      display: none;
+    }
+  }
+}
