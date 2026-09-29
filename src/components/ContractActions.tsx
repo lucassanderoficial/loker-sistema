@@ -179,6 +179,7 @@ export function ContractActions({ contract, onClose, onAction, availableVehicles
           auto_renew: currentContract.auto_renew,
           daily_rate: availableVehicles.find(v => v.id === newVehicleId)?.daily_rate || 0,
           total_amount: currentContract.total_amount,
+          base_amount: currentContract.total_amount,
           due_date: currentContract.due_date,
           payment_status: 'pending',
           status: 'active',

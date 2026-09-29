@@ -180,6 +180,7 @@ export function ContractForm({ onClose, onSave }: ContractFormProps) {
           auto_renew: formData.auto_renew,
           daily_rate: vehicles.find(v => v.id === formData.vehicle_id)?.daily_rate || 0,
           total_amount: totalAmount,
+          base_amount: totalAmount,
           due_date: dates.dueDate,
           created_by: user.id
         }]);
